@@ -6,7 +6,7 @@ import (
 
 // HelloWorld for hello world
 func HelloWorld() string {
-	return "FUKKKKKKKK"
+	return "Hello World, drone workshop!"
 }
 
 func main() {
