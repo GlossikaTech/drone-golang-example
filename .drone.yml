@@ -37,11 +37,11 @@ pipeline:
     commands:
       - go build -v -a -o release/linux/amd64/helloworld
 
-  # publish_server:
-  #   image: plugins/docker
-  #   pull: true
-  #   repo: appleboy/helloworld
-  #   secrets: [ docker_username, docker_password ]
-  #   default_tags: true
-  #   when:
-  #     event: [ push, tag ]
+  slack:
+    image: plugins/slack
+    webhook: https://hooks.slack.com/services/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
+    channel: drone
+    username: drone
+    icon_url: https://unsplash.it/256/256/?random
+    when:
+      status: [ success, failure ]
